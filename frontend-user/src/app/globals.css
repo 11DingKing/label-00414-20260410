@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义全局样式 */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  /* 支持 iOS 安全区域 */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+body {
+  font-family: "SF Pro Display", "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #F7F9FA;
+  color: #2C3E50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-height: 100dvh; /* 动态视口高度，解决移动端地址栏问题 */
+}
+
+/* 桌面端背景色 */
+@media (min-width: 768px) {
+  body {
+    background-color: #1a1a1a;
+  }
+}
+
+/* 隐藏滚动条但保持滚动功能 */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 卡片通用样式 */
+.card {
+  @apply bg-surface rounded-2xl shadow-sm p-4;
+}
+
+/* 按钮通用样式 */
+.btn-primary {
+  @apply bg-primary text-white rounded-2xl px-6 py-3 font-medium transition-all duration-200 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-text-main rounded-2xl px-6 py-3 font-medium transition-all duration-200 active:scale-95;
+}
+
+/* 移动端底部安全区域 */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* 防止移动端过度滚动 */
+@supports (-webkit-touch-callout: none) {
+  body {
+    height: -webkit-fill-available;
+  }
+}
