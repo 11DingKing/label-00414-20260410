@@ -121,9 +121,9 @@ export default function GamesPage() {
               <Sparkles size={16} />
               <span className="text-sm font-medium">今日推荐</span>
             </div>
-            <h3 className="font-bold text-lg">5 分钟正念冥想</h3>
+            <h3 className="font-bold text-lg">正念冥想</h3>
             <p className="text-white/70 text-sm mt-1">
-              完成可获得 30 积分 + 专属徽章
+              跟随呼吸节奏，放松身心，完成可获得 10 积分
             </p>
             <button className="mt-3 bg-white text-primary rounded-full px-4 py-2 text-sm font-medium">
               立即开始
